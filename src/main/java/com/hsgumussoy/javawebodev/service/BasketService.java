@@ -18,11 +18,11 @@ public class BasketService {
     }
 
     public Basket get(String id) {
-        return repository.findById(Integer.parseInt(id)).orElse(null);
+        return repository.findBasketsByUser_UserId(Integer.parseInt(id));
     }
 
     public Basket update(String id, Basket basket) {
-        Basket existingBasket = repository.findById(Integer.parseInt(id)).orElse(null);
+        Basket existingBasket = repository.findBasketsByUser_UserId(Integer.parseInt(id));
         if (existingBasket != null) {
             existingBasket.setBasketName(basket.getBasketName());
             existingBasket.setUser(basket.getUser());
@@ -33,7 +33,7 @@ public class BasketService {
     }
 
     public void delete(String id) {
-        repository.deleteById(Integer.parseInt(id));
+        repository.deleteBasketByUser_UserId(Integer.parseInt(id));
     }
 
     public List<Basket> getAll() {

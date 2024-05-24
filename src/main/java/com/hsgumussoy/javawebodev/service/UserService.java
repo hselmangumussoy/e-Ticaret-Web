@@ -22,7 +22,7 @@ public class UserService {
     }
 
     public void delete(String id) {
-        userRepository.deleteById(Integer.parseInt(id));
+        userRepository.deleteUserByUserId(Integer.parseInt(id));
     }
 
     public List<User> getAll() {
@@ -30,7 +30,7 @@ public class UserService {
     }
 
     public User update(String id, User user) {
-        User exisUser = userRepository.findById(Integer.parseInt(id)).orElse(null);
+        User exisUser = userRepository.findUserByUserId(Integer.parseInt(id));
         if (exisUser != null) {
             exisUser.setUserName(user.getUserName());
             exisUser.setUserCity(user.getUserCity());

@@ -1,8 +1,8 @@
 package com.hsgumussoy.javawebodev.Dto;
 
-public class BasketDto {
+public class BasketRequest {
     private Long basketId;
-    private UserDto user;
+    private int userId;
 
     public Long getBasketId() {
         return basketId;
@@ -12,11 +12,11 @@ public class BasketDto {
         this.basketId = basketId;
     }
 
-    public UserDto getUser() {
-        return user;
+    public int getUserId() {
+        return userId;
     }
 
-    public void setUser(UserDto user) {
-        this.user = user;
+    public void setUserId(int userId) {
+        this.userId = userId;
     }
 }
